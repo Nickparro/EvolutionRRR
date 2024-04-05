@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlanetPhases : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlanetPhases : MonoBehaviour
     public Color waterColor,greenColor,iceColor;
     public Animator planetAnimator;
     public GameObject rainyCloud, phase1, phase2, phase3;
+    public GameObject fishDrag, treeDrag, lizardDrag, dinoDrag, endingScreen;
+    
 
     void Start()
     {
@@ -41,6 +44,11 @@ public class PlanetPhases : MonoBehaviour
         StartCoroutine(LizardAddedCoroutine());
     }    
 
+    public void EndGame()
+    {
+        StartCoroutine(EndingStarted());
+    }
+
     private IEnumerator WaterOutCoroutine()
     {
         // Espera por la cantidad de segundos especificada.
@@ -48,6 +56,8 @@ public class PlanetPhases : MonoBehaviour
 
         // Ejecuta las acciones después del retraso.
         planetAnimator.SetTrigger("Water_out");
+        yield return new WaitForSeconds(2);
+        treeDrag.SetActive(true);
     }
 
     private IEnumerator WaterAddedCoroutine()
@@ -76,6 +86,8 @@ public class PlanetPhases : MonoBehaviour
     rendererObject.materials = materials;
 
     phase1.SetActive(true);
+    yield return new WaitForSeconds(6);
+    fishDrag.SetActive(true);
 }
 
 private IEnumerator GreenAddedCoroutine()
@@ -98,12 +110,25 @@ private IEnumerator GreenAddedCoroutine()
 
     yield return new WaitForSeconds(2);  // Espera antes de comenzar la transición.
     phase2.SetActive(true);
+    yield return new WaitForSeconds(5);
+    lizardDrag.SetActive(true);
 }
 
 private IEnumerator LizardAddedCoroutine()
 {
     yield return new WaitForSeconds(3);  // Espera antes de comenzar la transición.
     phase3.SetActive(true);
+    yield return new WaitForSeconds(5);
+    dinoDrag.SetActive(true);
+
+}
+
+private IEnumerator EndingStarted()
+{
+    yield return new WaitForSeconds(2);
+    endingScreen.SetActive(true);
+    yield return new WaitForSeconds(13);
+    SceneManager.LoadScene(0);
 }
 
 }
