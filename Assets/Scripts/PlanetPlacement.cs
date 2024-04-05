@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlanetPlacement : MonoBehaviour
 {
     // Definición de las posiciones como Vector3
-    public Vector3 leftPosition = new Vector3(-2f, 0f, 0f);
+    public Vector3 leftPosition = new Vector3(0f, 0f, 0f);
     public Vector3 centerPosition = new Vector3(0f, 0f, 0f);
-    public Vector3 rightPosition = new Vector3(2f, 0f, 0f);
+    public Vector3 rightPosition = new Vector3(0f, 0f, 0f);
 
     private Vector3[] positions; // Arreglo de posiciones a las que el objeto puede moverse
     private int currentPositionIndex = 1; // Índice de la posición actual
