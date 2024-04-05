@@ -7,16 +7,16 @@ public class PlanetStates : MonoBehaviour
     private Renderer rendererObject;
     private Color targetColor;
     public float transitionSpeed;
-    public Color dryColor;
-    public Color fireColor;
-    public Color iceColor;
+    public Color dryColor, fireColor, iceColor;
     public bool isHot;
     public bool isCold;
     public bool isPerfect;
+   
     void Start()
     {
         rendererObject = GetComponent<Renderer>();
         isPerfect = true;
+        
     }
 
     // Update is called once per frame
@@ -56,6 +56,7 @@ public class PlanetStates : MonoBehaviour
     }
     }
 
+    
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Ice"))
         {
@@ -75,4 +76,5 @@ public class PlanetStates : MonoBehaviour
         }
     }
 
+    
 }
