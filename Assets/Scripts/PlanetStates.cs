@@ -56,4 +56,23 @@ public class PlanetStates : MonoBehaviour
     }
     }
 
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Ice"))
+        {
+            isCold = true;
+            isPerfect = false;
+            isHot = false;
+        } else if (other.gameObject.CompareTag("Perfect"))
+        {
+            isPerfect = true;
+            isHot = false;
+            isCold = false;
+        } else if (other.gameObject.CompareTag("Fire"))
+        {
+            isHot = true;
+            isPerfect = false;
+            isCold = false;
+        }
+    }
+
 }
