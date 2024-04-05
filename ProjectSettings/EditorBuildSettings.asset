@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 342b3d248531fb242913c1e5535cb072
   - enabled: 1
-    path: Assets/Scenes/DiazTestScene.unity
-    guid: 3c55dc292f6546b41b355f4372ce5a83
+    path: Assets/Scenes/AnimationTesting.unity
+    guid: b08fd92ac8854bb4aadbfba420c64199
   m_configObjects: {}
