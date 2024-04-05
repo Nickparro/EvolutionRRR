@@ -27,12 +27,14 @@ public class PlanetStates : MonoBehaviour
 
     public void ChangeWeatherState(Color colorToChange)
     {
-        if(isHot)
+        Vector3 currentScale = transform.localScale;
+        
+        if(currentScale == new Vector3(74.59f, 74.59f, 74.59f))
         {
             isCold = false;
             isPerfect = false;
             targetColor = fireColor;
-        } else if (isCold)
+        } else if (currentScale == new Vector3(186.15f, 186.15f, 186.15f))
         {
             isHot = false;
             isPerfect = false;
@@ -57,24 +59,24 @@ public class PlanetStates : MonoBehaviour
     }
 
     
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("Ice"))
-        {
-            isCold = true;
-            isPerfect = false;
-            isHot = false;
-        } else if (other.gameObject.CompareTag("Perfect"))
-        {
-            isPerfect = true;
-            isHot = false;
-            isCold = false;
-        } else if (other.gameObject.CompareTag("Fire"))
-        {
-            isHot = true;
-            isPerfect = false;
-            isCold = false;
-        }
-    }
+    // private void OnTriggerEnter(Collider other) {
+    //     if(other.gameObject.CompareTag("Ice"))
+    //     {
+    //         isCold = true;
+    //         isPerfect = false;
+    //         isHot = false;
+    //     } else if (other.gameObject.CompareTag("Perfect"))
+    //     {
+    //         isPerfect = true;
+    //         isHot = false;
+    //         isCold = false;
+    //     } else if (other.gameObject.CompareTag("Fire"))
+    //     {
+    //         isHot = true;
+    //         isPerfect = false;
+    //         isCold = false;
+    //     }
+    // }
 
     
 }
