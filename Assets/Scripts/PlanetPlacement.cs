@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlanetPlacement : MonoBehaviour
 {
@@ -15,15 +17,16 @@ public class PlanetPlacement : MonoBehaviour
     {
         Vector3 currentScale = transform.localScale;
 
-        if (currentScale == new Vector3(74.59f, 74.59f, 74.59f)) // Escala para la posición derecha
+        if (currentScale == new Vector3(74.59f, 74.59f, 74.59f)) 
         {
             rightPositionSound.Play();
         }
-        else if (currentScale == new Vector3(128.3f, 128.3f, 128.3f)) // Escala para la posición central
+        else if (currentScale == new Vector3(128.3f, 128.3f, 128.3f)) 
         {
             centerPositionSound.Play();
+            //SceneManager.LoadNextScene();
         }
-        else if (currentScale == new Vector3(186.15f, 186.15f, 186.15f)) // Escala para la posición izquierda
+        else if (currentScale == new Vector3(186.15f, 186.15f, 186.15f)) 
         {
             leftPositionSound.Play();
         }
