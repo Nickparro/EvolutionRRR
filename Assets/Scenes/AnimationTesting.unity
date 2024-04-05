@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009841791, g: 0.011257295, b: 0.022850547, a: 1}
+  m_IndirectSpecularColor: {r: 0.09982362, g: 0.10877698, b: 0.16493028, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5522,7 +5522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1391663616
 Transform:
   m_ObjectHideFlags: 0
@@ -5575,6 +5575,8 @@ PlayableDirector:
     value: {fileID: 7424893613650615107}
   - key: {fileID: 4294640184752230997, guid: 97ad690f184bb274c884e3d77cc42091, type: 2}
     value: {fileID: 7800610363070104058}
+  - key: {fileID: -6706500975880012701, guid: 97ad690f184bb274c884e3d77cc42091, type: 2}
+    value: {fileID: 1549892282}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1470358627
@@ -5741,6 +5743,7 @@ GameObject:
   - component: {fileID: 1549892278}
   - component: {fileID: 1549892281}
   - component: {fileID: 1549892279}
+  - component: {fileID: 1549892282}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5839,6 +5842,27 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1549892282
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549892277}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1573370889
 GameObject:
   m_ObjectHideFlags: 0

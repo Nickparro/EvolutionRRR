@@ -127,7 +127,7 @@ private IEnumerator EndingStarted()
 {
     yield return new WaitForSeconds(2);
     endingScreen.SetActive(true);
-    yield return new WaitForSeconds(13);
+    yield return new WaitForSeconds(16);
     SceneManager.LoadScene(0);
 }
 
