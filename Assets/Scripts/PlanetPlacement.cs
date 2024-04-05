@@ -5,7 +5,30 @@ using UnityEngine;
 public class PlanetPlacement : MonoBehaviour
 {
     public float speed = 5f; // Velocidad de movimiento
-    private bool isMoving = false; // Bandera para evitar múltiples movimientos simultáneos
+    private bool isMoving = false; // Bool para evitar múltiples movimientos simultáneos
+
+    public AudioSource leftPositionSound;
+    public AudioSource centerPositionSound;
+    public AudioSource rightPositionSound;
+
+    void OnMouseDown()
+    {
+        Vector3 currentScale = transform.localScale;
+
+        if (currentScale == new Vector3(74.59f, 74.59f, 74.59f)) // Escala para la posición derecha
+        {
+            rightPositionSound.Play();
+        }
+        else if (currentScale == new Vector3(128.3f, 128.3f, 128.3f)) // Escala para la posición central
+        {
+            centerPositionSound.Play();
+        }
+        else if (currentScale == new Vector3(186.15f, 186.15f, 186.15f)) // Escala para la posición izquierda
+        {
+            leftPositionSound.Play();
+        }
+    }
+
 
     public void MoveToPosition(Vector3 targetPosition, Vector3 targetScale)
     {
@@ -28,7 +51,7 @@ public class PlanetPlacement : MonoBehaviour
             // Interpola entre la escala actual y la escala objetivo
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * speed);
 
-            yield return null;
+            yield return true;
         }
 
         transform.position = targetPosition; // Asegura que el objeto llegue exactamente a la posición objetivo
