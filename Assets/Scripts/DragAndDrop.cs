@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
+    public float rotationSpeed = 50.0f;
     private GameObject draggedObject;
 
     private void Update()
     {
+        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
         if (Input.GetMouseButtonDown(0))
         {
             if (draggedObject == null)
