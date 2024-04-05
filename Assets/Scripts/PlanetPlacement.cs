@@ -23,8 +23,10 @@ public class PlanetPlacement : MonoBehaviour
         }
         else if (currentScale == new Vector3(128.3f, 128.3f, 128.3f)) 
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             centerPositionSound.Play();
-            //SceneManager.LoadNextScene();
+            StartCoroutine(WaitAndLoadNextScene());
         }
         else if (currentScale == new Vector3(186.15f, 186.15f, 186.15f)) 
         {
@@ -61,4 +63,13 @@ public class PlanetPlacement : MonoBehaviour
         transform.localScale = targetScale; // Asegura que el objeto tenga la escala objetivo
         isMoving = false; // Indica que el movimiento ha terminado
     }
+
+    IEnumerator WaitAndLoadNextScene()
+    {
+        yield return new WaitForSeconds(3f);
+        ScenesManager.Instance.LoadNextScene();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
+
